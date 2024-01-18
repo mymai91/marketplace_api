@@ -1,0 +1,5 @@
+ALTER TABLE product
+    ADD created_at TIMESTAMP WITHOUT TIME ZONE;
+
+ALTER TABLE product
+    ADD updated_at TIMESTAMP WITHOUT TIME ZONE;
