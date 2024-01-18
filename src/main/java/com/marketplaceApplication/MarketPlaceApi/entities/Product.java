@@ -1,6 +1,8 @@
 package com.marketplaceApplication.MarketPlaceApi.entities;
 
 import jakarta.persistence.*;
+import jakarta.validation.constraints.Min;
+import jakarta.validation.constraints.NotNull;
 import lombok.Getter;
 import lombok.Setter;
 import org.hibernate.annotations.CreationTimestamp;
@@ -20,9 +22,12 @@ public class Product {
     @Column(name = "id", nullable = false)
     private Long id;
 
+    @NotNull(message = "Title must not be null")
     @Column(name = "title", nullable = false)
     private String title = "";
 
+    @NotNull(message = "Price must not be null")
+    @Min(value = 0, message = "Price must be greater than or equal to 0")
     @Column(name = "price", nullable = false)
     private BigDecimal price = BigDecimal.ZERO;
 
